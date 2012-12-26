@@ -7,4 +7,13 @@ class ApplicationController < ActionController::Base
   def current_project
     project = Project.find(session[:project_id]) rescue Project.last
   end
+
+  def redirect_if_not_current_user(user_id)
+    if user_id && user_id != current_user.id
+      sign_out(current_user)
+      redirect_to new_user_session_path
+      return true
+    end
+    false
+  end
 end

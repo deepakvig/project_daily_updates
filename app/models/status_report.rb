@@ -6,6 +6,8 @@ class StatusReport < ActiveRecord::Base
 
   validate :validate_has_at_least_one_status
 
+  scope :by_user_name, :include => "user", :order => "users.email ASC", :conditions => "user_id IS NOT NULL"
+
   def validate_has_at_least_one_status
     if today.blank? && yesterday.blank?
       errors[:base] << "Must have at least on status set"

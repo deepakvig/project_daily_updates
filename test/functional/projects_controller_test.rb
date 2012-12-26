@@ -49,4 +49,26 @@ class ProjectsControllerTest < ActionController::TestCase
 
     assert_redirected_to projects_path
   end
+
+  test "project timeline index should be sorted correctly" do
+    set_current_project(:gradschoolmatch)
+    get :show, :id => projects(:gradschoolmatch).to_param
+    expected_keys = assigns(:reports).keys.sort.map{|d| d.to_s(:db)}
+    assert_equal ["2011-07-01","2011-07-05"], expected_keys
+    assert_equal [status_reports(:first).id] , assigns(:reports)[Date.parse("2011-07-01")].map(&:id)
+  end
+
+  test "index should display project timeline" do
+    set_current_project(:gradschoolmatch)
+    get :show, :id => projects(:gradschoolmatch).id
+    assert_select "div[id *= day]", :count => 2
+    assert_select "div#2011-07-01_day" do
+      assert_select "div[id *= report]", :count => 1
+      assert_select "div#?", dom_id(status_reports(:first))
+    end
+    assert_select "div#2011-07-05_day" do
+      assert_select "div[id *= report]", :count => 1
+      assert_select "div#?", dom_id(status_reports(:second))
+    end
+  end
 end
