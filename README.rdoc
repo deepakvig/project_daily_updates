@@ -16,6 +16,6 @@ To use the app, follow these steps
 4) rails g devise User
 
 To run test, type
-rake     # => Run all tests                                       
-rake test:units  # => Run unit tests                            
+rake     # => Run all tests  \n                                     
+rake test:units  # => Run unit tests     \n                       
 rake test:functionals  # => Run functional tests
