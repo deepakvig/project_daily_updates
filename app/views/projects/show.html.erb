@@ -1,5 +1,17 @@
 <p id="notice"><%= notice %></p>
 
+<h2>Status Reports for <%= @project.name %></h2>
+<% @reports.keys.sort.each do |date| %>
+  <div id="<%= date.to_s(:db) %>_day">
+    <h3>Reports for <%= date.to_s(:long) %></h3>
+    <% @reports[date].each do |report| %>
+      <div id="<%= dom_id(report) %>">
+        Yesterday I: <%= report.yesterday %>
+        Today I will: <%= report.today %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
 <p>
   <b>Name:</b>
   <%= @project.name %>

@@ -17,6 +17,8 @@ class ActiveSupport::TestCase
     @request.session[:project_id] = projects(project).id
   end
 
+  include ActionController::RecordIdentifier
+
   # Add more helper methods to be used by all tests here...
 end
 
