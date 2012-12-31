@@ -1,21 +1,18 @@
 RAILS APP : Daily Reports Update
 
-This app is used for daily scrum purposes to keep a record of the daily updates for each User's work on a Project.
+  This app is used for daily scrum purposes to keep a record of the daily updates for each User's work on a Project.
 
 Using 
 
-Rails -v 3.2.2
-Ruby -v 1.9.3
-Devise
-TDD Testing
+  Rails -v 3.2
+  Devise
+  TDD Testing
 
 To use the app, follow these steps
-1) git clone git@github.com:deepakvig/project_daily_updates.git
-2) bundle
-3) rails g devise:install
-4) rails g devise User
+  git clone git@github.com:deepakvig/project_daily_updates.git
+  bundle
 
 To run test, type
-rake     # => Run all tests                                       
-rake test:units  # => Run unit tests                          
-rake test:functionals  # => Run functional tests
+  rake     # => Run all tests                                       
+  rake test:units  # => Run unit tests                          
+  rake test:functionals  # => Run functional tests
