@@ -14,6 +14,7 @@
   <div class="field">
     <%= f.label :project %><br />
     <%= select_tag(:project_id, options_for_select(Project.all.map{|p| [p.name, p.id]})) %>
+    <%= link_to "Create Project", new_project_path %>
   </div>
   <div class="field">
     <%= f.label :yesterday %><br />

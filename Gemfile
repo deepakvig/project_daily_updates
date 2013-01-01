@@ -21,6 +21,7 @@ group :assets do
 end
 
 gem 'devise'
+gem 'factory_girl_rails'
 
 gem 'jquery-rails'
 
