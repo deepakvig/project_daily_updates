@@ -1,6 +1,6 @@
 RAILS APP : Daily Reports Update
 
-  This app is used for daily scrum purposes to keep a record of the daily updates for each User's work on a Project.
+  This app is used for daily scrum purposes to keep a record of the daily updates for each User's work on a Project..
 
 Using 
 
